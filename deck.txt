@@ -1,0 +1,91 @@
+1 Magda, Brazen Outlaw (KHM) 142
+1 Abrade (HOU) 83
+1 Adaptive Automaton (BRR) 1
+1 Agatha's Soul Cauldron (WOE) 242
+1 Ancient Copper Dragon (CLB) 161
+1 Ancient Tomb (UMA) 236
+1 Arena of Glory (MH3) 215
+1 Axgard Cavalry (KHM) 121
+1 Barbarian Ring (PLST) ODY-313
+1 Barkform Harvester (BLB) 243
+1 Bloodfire Dwarf (APC) 56
+1 Bloodline Pretender (MOC) 350
+1 Bogardan Hellkite (IMA) 118
+1 Bottle-Cap Blast (PIP) 55
+1 Cast into the Fire (LTR) 118
+1 Cavern of Souls (UMA) 237
+1 Chaos Warp (C20) 146
+1 Chrome Mox (PRM) 82872
+1 Clock of Omens (5DN) 110
+1 Clown Car (UNF) 186
+1 Command Beacon (CMR) 349
+1 Deflecting Swat (C20) 50
+1 Dwarven Armorer (FEM) 50
+1 Dwarven Grunt (PLST) ODY-185
+1 Dwarven Scorcher (JUD) 86
+1 Dwarven Trader (HML) 72b
+1 Enslaved Dwarf (TOR) 96
+1 Fountainport (BLB) 253
+1 Galvanic Blast (2XM) 125
+1 Galvanic Discharge (MH3) 122
+1 Gamble (EMA) 132
+1 Gemstone Caverns (TSP) 274
+1 Ghostfire Slice (MH3) 123 *F*
+1 Gilded Ghoda (DFT) 130
+1 God-Pharaoh's Statue (WAR) 238
+1 Gogo, Mysterious Mime (FIC) 56
+1 Great Furnace (MRD) 282
+1 Great Train Heist (OTJ) 125
+1 Inventors' Fair (KLD) 247
+1 Jeska's Will (CMR) 187
+1 Kavaron, Memorial World (EOE) 255
+1 Knuckles the Echidna (SLD) 2082
+1 Liberated Dwarf (JUD) 95
+1 Lifecraft Engine (DFT) 234
+1 Lightning Bolt (M10) 146
+1 Lotus Petal (TMP) 294
+1 Mana Vault (PRM) 102343
+1 Maskwood Nexus (KHM) 240
+1 Metallic Mimic (LCC) 308
+10 Mountain (THB) 253
+1 Mox Diamond (TPR) 228
+1 Mox Opal (PRM) 82856
+1 Mutavault (M14) 228
+1 Pinnacle Monk // Mystic Peak (MH3) 246
+1 Plundering Barbarian (AFR) 158
+1 Portal to Phyrexia (BRO) 240
+1 Professional Face-Breaker (SNC) 116
+1 Proteus Machine (SCG) 141
+1 Pyroblast (SS3) 5
+1 Pyrokinesis (EMA) 143
+1 Ragavan, Nimble Pilferer (MUL) 21
+1 Ramunap Ruins (OTC) 311
+1 Realm-Scorcher Hellkite (WOE) 145
+1 Reckless Endeavor (AFC) 33
+1 Reckoner Bankbuster (PNEO) 255p
+1 Red Elemental Blast (4ED) 218
+1 Rite of Flame (CSP) 96
+1 Roaming Throne (LCI) 258
+1 Season of the Bold (BLB) 152
+1 Shatterskull Smashing // Shatterskull, the Hammer Pass (ZNR) 161
+1 Shinka, the Bloodsoaked Keep (CHK) 282
+1 Simian Spirit Guide (TSR) 190
+1 Snow-Covered Mountain (SLD) 1476
+1 Sol Ring (C21) 263
+1 Spark Mage (ODY) 222
+1 Springleaf Drum (LRW) 261
+1 Stridehangar Automaton (DRC) 19
+1 Summon: Bahamut (FIN) 1
+1 Sundering Eruption // Volcanic Fissure (MH3) 248
+1 The One Ring (LTR) 246
+1 Three Tree Mascot (BLB) 251
+1 Tibalt's Trickery (PKHM) 153p
+1 Universal Automaton (J22) 803
+1 Unlicensed Hearse (SNC) 246
+1 Untimely Malfunction (DSK) 161
+1 Urza's Saga (MH2) 259
+1 Utvara Hellkite (RVR) 431
+1 Volatile Fault (LCI) 286
+1 Wild Magic Surge (CLB) 206
+1 Xorn (AFR) 167
+1 Zoyowa's Justice (LCI) 173

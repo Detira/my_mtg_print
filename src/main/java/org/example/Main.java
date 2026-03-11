@@ -9,14 +9,19 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.util.Matrix;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 import java.net.http.HttpRequest;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,8 +33,8 @@ public class Main {
     
     // -------------------- CONFIGURATION --------------------
     private static final float MM_TO_PT = 72f / 25.4f;          // mm -> points
-    private static final float PAGE_W_PT = 85f * MM_TO_PT;      // 85mm width
-    private static final float PAGE_H_PT = 60f * MM_TO_PT;      // 60mm height
+    private static final float PAGE_W_PT = 91f * MM_TO_PT;      // 85mm width, edit: changed to 91mm for 3mm thick border
+    private static final float PAGE_H_PT = 66f * MM_TO_PT;      // 60mm height, edit: changed to 66mm for 3mm thick border
     
     private static final String DECK_FILE = "deck.txt";
     private static final String OUTPUT_PDF = "output.pdf";
@@ -105,7 +110,25 @@ public class Main {
                     float cx = PAGE_W_PT / 2f;
                     float cy = PAGE_H_PT / 2f;
                     
+                    // edit: find border colour
+                    BufferedImage bi = ImageIO.read(new ByteArrayInputStream(imgBytes));
+                    int sample = bi.getRGB(20, 20);  // sample top-left
+                    Color c = new Color(sample, true);
+                    int r = c.getRed();
+                    int g = c.getGreen();
+                    int b = c.getBlue();
+                    
                     try (PDPageContentStream cs = new PDPageContentStream(doc, page)) {
+                        
+                        // edit: added section to set black background (in order to have black border)
+                        // --- Draw the page background ---
+                        cs.saveGraphicsState();
+                        // Example: set background to black (RGB 0,0,0), edited to mtg's (23,20,15), edited again to found border colour from previous segment
+                        cs.setNonStrokingColor(r, g, b);
+                        cs.addRect(0, 0, PAGE_W_PT, PAGE_H_PT);
+                        cs.fill();
+                        cs.restoreGraphicsState();
+                        
                         cs.saveGraphicsState();
                         
                         // Rotate 90° clockwise around page center
@@ -157,10 +180,19 @@ public class Main {
     
     // -------------------- FETCH CARD IMAGE FROM SCRYFALL --------------------
     private static CardImage fetchCardImage(Identifier id) throws Exception {
-        String url = "https://api.scryfall.com/cards/named?exact=" + id.name.replace(" ", "+");
+        // 3.11.2026 edit START (fixing &,'-//: in URL, finding cards via set and collector's number)
+        //String url = "https://api.scryfall.com/cards/named?exact=" + id.name.replace(" ", "+");
+        //if (id.set != null && id.collectorNumber != null) {
+        //    url += "&set=" + id.set + "&number=" + id.collectorNumber;
+        //}
+        String url;
+        String encodedName = URLEncoder.encode(id.name, StandardCharsets.UTF_8);
         if (id.set != null && id.collectorNumber != null) {
-            url += "&set=" + id.set + "&number=" + id.collectorNumber;
+            url = "https://api.scryfall.com/cards/" + id.set + "/" + id.collectorNumber;
+        } else {
+            url = "https://api.scryfall.com/cards/named?exact=" + encodedName;
         }
+        // 3.11.2026 edit END
         
         HttpRequest req = HttpRequest.newBuilder()
             .uri(URI.create(url))
@@ -173,7 +205,10 @@ public class Main {
         
         // fallback to fuzzy search
         if (resp.statusCode() != 200) {
-            url = "https://api.scryfall.com/cards/named?fuzzy=" + id.name.replace(" ", "+");
+            // 3.11.2026 edit START (fixing &,'-//: in URL)
+            //url = "https://api.scryfall.com/cards/named?fuzzy=" + id.name.replace(" ", "+");
+            url = "https://api.scryfall.com/cards/named?fuzzy=" + encodedName;
+            // 3.11.2026 edit END
             HttpRequest req2 = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .timeout(Duration.ofSeconds(30))

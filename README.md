@@ -1,19 +1,18 @@
 # my_mtg_print
 
-Converts moxfield decklist into pdf.
+Converts a moxfield decklist into pdf.
 
 Guide:
-	open decklist on moxfield
-		More
-		Export
-		Copy for Moxfield
-	open deck.txt
-		paste (the decklist) into it
-	run the code
-		(for example through intellij)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Open decklist on moxfield
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Click on More
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Click on Export
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Click on Copy for Moxfield
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Open deck.txt (within downloaded files)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Paste (the decklist) into it
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Run the code (using IntelliJ)
 
-New output.pdf will be created, which contains images of every card (downloaded from Scryfall),
-one image per page, pages of size 85mmx60mm, centered.
+New file named output.pdf will be created, it will contain images of all the cards from the given decklist (the images will be downloaded from Scryfall), one image per page, page size: 85mmx60mm, centered.
+
 This format of pdf is supposed to be printed as visit cards with rounded edges.
 
 Cheers

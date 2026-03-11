@@ -15,4 +15,7 @@ New file named output.pdf will be created, it will contain images of all the car
 
 This format of pdf is supposed to be printed as visit cards with rounded edges.
 
+<b>Disclamer: the project was built using ChatGPT, I only adjusted it. (fixed bugs, added border recognition and tweaked pdf representation)</b>
+
 Cheers
+
